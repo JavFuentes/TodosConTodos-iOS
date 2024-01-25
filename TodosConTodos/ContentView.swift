@@ -19,8 +19,28 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var numeroDeAlumnos = "" // Almacena la entrada del usuario
+    
     @State private var procesarDatos = false // Maneja el estado de procesamiento
+    @State private var numeroDeAlumnosTexto = "" // Texto ingresado por el usuario
+    @State private var numeroDeAlumnos = "" // Almacena la entrada del usuario
+    @State private var tiempoRestante: Float = 0.0
+    @State private var numeroAlumnos = 0
+    @State private var listaAlumnos: [Int] = []
+    @State private var alumnoA: [Int] = []
+    @State private var alumnoB: [Int] = []
+    @State private var alumnoC: [Int] = []
+    @State private var alumnoD: [Int] = []
+    @State private var parejasPosibles = 0
+    @State private var rondas = 0
+    @State private var alumnosPares: Bool = false
+    @State private var paresPorRonda = 0
+    @State private var contadorPosiciones = 0
+    @State private var saltoRonda = 0
+    @State private var tiempoTotalIntercambio = 0
+    @State private var intercambios = 0
+    @State private var tiempoPorRonda = 0
+
+    let tiempoIntercambio: Float = 30
 
     var body: some View {
         VStack {
